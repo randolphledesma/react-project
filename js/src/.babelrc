@@ -5,6 +5,7 @@ babel components --watch --out-file ../dist/component-bundle.js
 {
     "presets": [
         "es2015",
-        "react"
+        "react",
+        "stage-0"
     ]
 }

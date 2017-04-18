@@ -9,27 +9,59 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Hello = function (_React$Component) {
-  _inherits(Hello, _React$Component);
+    _inherits(Hello, _React$Component);
 
-  function Hello() {
-    _classCallCheck(this, Hello);
+    function Hello() {
+        var _ref;
 
-    return _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).apply(this, arguments));
-  }
+        var _temp, _this, _ret;
 
-  _createClass(Hello, [{
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        "Hello, ",
-        this.props.name
-      );
+        _classCallCheck(this, Hello);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Hello.__proto__ || Object.getPrototypeOf(Hello)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            input1: "",
+            input2: ""
+        }, _this.handleChange = function (name, e) {
+            var change = {};
+            change[name] = e.target.value;
+            _this.setState(change);
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
-  }]);
 
-  return Hello;
+    _createClass(Hello, [{
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
+                null,
+                "Hello: ",
+                this.props.name,
+                React.createElement("br", null),
+                React.createElement("input", {
+                    type: "text",
+                    value: this.state.input1,
+                    onChange: this.handleChange.bind(this, "input1")
+                }),
+                React.createElement("br", null),
+                React.createElement("input", {
+                    type: "text",
+                    value: this.state.input2,
+                    onChange: this.handleChange.bind(this, "input2")
+                }),
+                React.createElement("br", null),
+                "Nice: ",
+                this.state.input1,
+                " ",
+                this.state.input2
+            );
+        }
+    }]);
+
+    return Hello;
 }(React.Component);
 "use strict";
 

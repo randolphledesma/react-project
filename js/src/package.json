@@ -9,10 +9,12 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup": "del ..\\dist\\component-bundle.js",
     "babel": "babel components --out-file ../dist/component-bundle.js"
   },
   "author": "",
